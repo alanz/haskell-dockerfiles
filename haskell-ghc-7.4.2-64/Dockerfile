@@ -13,3 +13,6 @@ RUN tar xvfj ghc-7.4.2-x86_64-unknown-linux.tar.bz2
 RUN cd ghc-7.4.2 && ./configure
 RUN cd ghc-7.4.2 && make install
 
+# Clean up
+RUN rm -fr ghc-7.4.2-x86_64-unknown-linux.tar.bz2 ghc-7.4.2
+
