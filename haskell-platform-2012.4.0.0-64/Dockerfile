@@ -14,3 +14,6 @@ RUN cd haskell-platform-2012.4.0.0 && ./configure
 RUN cd haskell-platform-2012.4.0.0 && make
 RUN cd haskell-platform-2012.4.0.0 && make install
 
+# Clean up
+RUN rm -fr haskell-platform-2012.4.0.0.tar.gz haskell-platform-2012.4.0.0
+
