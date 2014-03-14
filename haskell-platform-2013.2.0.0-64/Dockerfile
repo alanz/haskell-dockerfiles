@@ -14,6 +14,8 @@ RUN cd haskell-platform-2013.2.0.0 && ./configure
 RUN cd haskell-platform-2013.2.0.0 && make
 RUN cd haskell-platform-2013.2.0.0 && make install
 
+# Clean up
+RUN rm -fr haskell-platform-2013.2.0.0.tar.gz haskell-platform-2013.2.0.0
 
 # Note: to debug the partial build do the following
 # docker run -i -t alanz/haskell-platform-2013.2.0.0-64 /bin/bash
