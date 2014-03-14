@@ -12,3 +12,6 @@ RUN tar xvfj ghc-7.6.3-x86_64-unknown-linux.tar.bz2
 RUN cd ghc-7.6.3 && ./configure
 RUN cd ghc-7.6.3 && make install
 
+# Clean up
+RUN rm -fr ghc-7.6.3-x86_64-unknown-linux.tar.bz2 ghc-7.6.3
+
