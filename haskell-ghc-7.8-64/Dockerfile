@@ -29,6 +29,6 @@ RUN apt-get -y install zlib1g-dev wget
 
 RUN wget http://hackage.haskell.org/package/cabal-install-1.18.0.3/cabal-install-1.18.0.3.tar.gz
 RUN tar xvfz cabal-install-1.18.0.3.tar.gz
-RUN cabal-install-1.18.0.3/bootstrap.sh
+RUN (cd cabal-install-1.18.0.3 && ./bootstrap.sh)
 RUN rm -fr cabal-install-1.18.0.3*
 
