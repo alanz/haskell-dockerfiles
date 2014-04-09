@@ -1,22 +1,24 @@
 # build with
 #  docker build -t 'alanz/haskell-ghc-7.8-64' .
 
-FROM debian:testing
+FROM alanz/debian-base-64
+#FROM debian:testing
 
 MAINTAINER alan.zimm@gmail.com
 
 ENV DEBIAN_FRONTEND noninteractive
 
-####### GHC 7.8.1-rc2 ######################
+####### GHC 7.8.1 offical ######################
 
-RUN echo "deb http://cdn.debian.net/debian/ experimental main" >> /etc/apt/sources.list
-RUN echo "deb http://cdn.debian.net/debian/ testing main" >> /etc/apt/sources.list
 
-RUN apt-get update
+RUN wget http://www.haskell.org/ghc/dist/7.8.1/ghc-7.8.1-x86_64-unknown-linux-deb7.tar.bz2
 
-# RUN apt-cache search ghc | grep -v libghc
+RUN tar xvfj ghc-7.8.1-x86_64-unknown-linux-deb7.tar.bz2
+RUN cd ghc-7.8.1 && ./configure
+RUN cd ghc-7.8.1 && make install
 
-RUN apt-get install -y -t experimental ghc
+# Clean up
+RUN rm -fr ghc-7.8.1-x86_64-unknown-linux-deb7.tar.bz2 ghc-7.8.1
 
 RUN ghc --version
 
