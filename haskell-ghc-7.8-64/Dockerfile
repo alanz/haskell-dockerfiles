@@ -8,17 +8,16 @@ MAINTAINER alan.zimm@gmail.com
 
 ENV DEBIAN_FRONTEND noninteractive
 
-####### GHC 7.8.1 offical ######################
+####### GHC 7.8.2 offical ######################
 
+RUN wget http://www.haskell.org/ghc/dist/7.8.2/ghc-7.8.2-x86_64-unknown-linux-deb7.tar.bz2
 
-RUN wget http://www.haskell.org/ghc/dist/7.8.1/ghc-7.8.1-x86_64-unknown-linux-deb7.tar.bz2
-
-RUN tar xvfj ghc-7.8.1-x86_64-unknown-linux-deb7.tar.bz2
-RUN cd ghc-7.8.1 && ./configure
-RUN cd ghc-7.8.1 && make install
+RUN tar xvfj ghc-7.8.2-x86_64-unknown-linux-deb7.tar.bz2
+RUN cd ghc-7.8.2 && ./configure
+RUN cd ghc-7.8.2 && make install
 
 # Clean up
-RUN rm -fr ghc-7.8.1-x86_64-unknown-linux-deb7.tar.bz2 ghc-7.8.1
+RUN rm -fr ghc-7.8.2-x86_64-unknown-linux-deb7.tar.bz2 ghc-7.8.2
 
 RUN ghc --version
 
