@@ -11,7 +11,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ####### GHC 7.8.3 offical ######################
 
 
-RUN wget http://www.haskell.org/ghc/dist/7.8.2/ghc-7.8.3-x86_64-unknown-linux-deb7.tar.bz2
+RUN wget http://www.haskell.org/ghc/dist/7.8.3/ghc-7.8.3-x86_64-unknown-linux-deb7.tar.bz2
 
 RUN tar xvfj ghc-7.8.3-x86_64-unknown-linux-deb7.tar.bz2
 RUN cd ghc-7.8.3 && ./configure
