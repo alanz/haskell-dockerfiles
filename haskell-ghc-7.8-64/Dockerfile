@@ -8,6 +8,13 @@ MAINTAINER alan.zimm@gmail.com
 
 ENV DEBIAN_FRONTEND noninteractive
 
+######### make sure base image is current ##############################
+
+RUN echo "1" && apt-get update
+
+RUN echo "1" && apt-get -y dist-upgrade
+
+
 ####### GHC 7.8.3 offical ######################
 
 
