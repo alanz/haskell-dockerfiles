@@ -31,14 +31,18 @@ RUN apt-get install -y libglw1-mesa
 RUN apt-get install -y libglw1-mesa-dev
 
 #-----------------------------------------------------------------------
+RUN apt-get install -y locales
+RUN locale-gen
+
+#-----------------------------------------------------------------------
 # Install emacs and ssh server
 RUN echo "deb http://cdn.debian.net/debian/ testing main non-free contrib" >> /etc/apt/sources.list
-RUN apt-get update
-RUN apt-get -y dist-upgrade
-RUN apt-get -y install ssh openssh-server
-RUN apt-get -y install sudo
-RUN apt-get -y install git
-RUN apt-get -y install emacs24
+# RUN apt-get update
+# RUN apt-get -y dist-upgrade
+# RUN apt-get -y install ssh openssh-server
+# RUN apt-get -y install sudo
+# RUN apt-get -y install git
+# RUN apt-get -y install emacs24
 
 # Get rid of downloaded archive files
 RUN apt-get clean
