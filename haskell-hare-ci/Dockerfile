@@ -1,7 +1,7 @@
 from debian:stable
 maintainer Alan Zimmerman <alan.zimm@gmail.com>
 
-RUN apt-get update && apt-get install -y libgmp-dev curl
+RUN apt-get update && apt-get install -y libgmp-dev curl git
 
 RUN curl -sSL https://get.haskellstack.org/ | sh
 
