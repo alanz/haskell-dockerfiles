@@ -20,3 +20,4 @@ RUN stack setup 8.4.1
 
 RUN stack install cabal
 RUN cabal update
+
