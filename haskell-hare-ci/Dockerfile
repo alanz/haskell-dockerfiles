@@ -18,6 +18,6 @@ RUN stack setup 8.2.1
 RUN stack setup 8.2.2
 RUN stack setup 8.4.1
 
-RUN stack install cabal
+RUN stack install cabal-install
 RUN cabal update
 
