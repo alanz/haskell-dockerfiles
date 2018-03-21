@@ -25,7 +25,7 @@ RUN stack setup 8.4.1
 
 RUN stack install cabal-install
 RUN cabal update
-RUN cabal install alex
-RUN cabal install happy
+RUN stack install alex
+RUN stack install happy
 
 ENV PATH /root/.cabal/bin:$PATH
