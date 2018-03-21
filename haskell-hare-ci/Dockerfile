@@ -5,7 +5,8 @@ RUN apt-get update && apt-get install -y \
   libgmp-dev \
   curl \
   git \
-  libtinfo-dev
+  libtinfo-dev \
+  libicu-dev
 
 RUN curl -sSL https://get.haskellstack.org/ | sh
 
