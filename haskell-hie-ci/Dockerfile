@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
   libtinfo-dev \
   libicu-dev \
   zlib1g-dev \
-  libz3-dev
+  z3 libz3-dev
 
 ENV PATH /root/.local/bin:/root/.stack/programs/x86_64-linux/ghc-8.2.2/bin/:$PATH
 
