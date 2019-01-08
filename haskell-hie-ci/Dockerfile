@@ -12,6 +12,8 @@ RUN apt-get update && apt-get install -y \
 
 ENV PATH /root/.local/bin:/root/.stack/programs/x86_64-linux/ghc-8.2.2/bin/:$PATH
 
+RUN stack upgrade
+
 RUN stack setup 8.2.2
 
 RUN stack install cabal-install
