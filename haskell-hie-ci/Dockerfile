@@ -10,17 +10,17 @@ RUN apt-get update && apt-get install -y \
   zlib1g-dev \
   z3 libz3-dev
 
-ENV PATH /root/.local/bin:/root/.stack/programs/x86_64-linux/ghc-8.2.2/bin/:$PATH
+ENV PATH /root/.local/bin:/root/.stack/programs/x86_64-linux/ghc-8.6.5/bin/:$PATH
 
 RUN stack upgrade
 
-RUN stack setup 8.2.2
+RUN stack setup 8.6.5
 
 RUN stack install cabal-install
-RUN cabal update
+RUN cabal new-update
 RUN stack install alex
 RUN stack install happy
 
-RUN cabal install liquidhaskell
+RUN cabal new-install liquidhaskell
 
 ENV PATH /root/.cabal/bin:$PATH
